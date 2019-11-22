@@ -1,0 +1,84 @@
+/* app css stylesheet */
+
+[ng-cloak] {
+    display: none;
+}
+
+html, body {
+    font-family: 'Roboto Slab', serif;
+    font-size: 12px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Toolbar area */
+.menu {
+    background-color: transparent;
+    border: none;
+    height: 38px;
+    margin: 16px;
+    width: 36px;
+}
+md-toolbar h1 {
+    margin: auto;
+}
+
+/* Main area */
+main { height: 100%; }
+
+/* Lookup Params area */
+.lookupParams-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    z-index: 60;
+    width: 250px;
+    min-width: 250px;
+    max-width: 250px;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: static;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+.lookupParams-container md-toolbar:not(.md-menu-toolbar) {
+    background-color: transparent;
+    border-bottom: 2px solid rgb(63,81,181);
+}
+.lookupParams-container .md-toolbar-tools h3 {
+    color: #000000;
+    font-size: smaller;
+}
+.lookupParams-container md-content {
+    padding: 0 1rem;
+}
+.lookupParams-container md-content button {
+    margin-left: 0;
+}
+
+/* Addresses area */
+.addresses-container { width: 100%; }
+.addresses-container md-content {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: 100%;
+}
+.addresses-container .layout-row > .flex-33 {
+    max-width: 32.041%;
+}
+.addresses-container md-content .md-headline {
+    font-size: 20px;
+}
+
+/* Typography */
+md-toolbar h1 {
+    font-size: 1.250em;
+}
