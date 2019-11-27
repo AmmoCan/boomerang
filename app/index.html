@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp" class="no-js">
+<html lang="en" ng-app="boomerang" class="no-js">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>My AngularJS App</title>
+        <title>Boomerang</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="lib/angular-material/angular-material.css">
@@ -19,8 +19,8 @@
         </md-toolbar>
 
         <!-- Container #2 -->
-        <main layout="row" ng-view ng-controller="View1Ctrl"></main>
-
+        <!--<main class="row" layout="row" ng-view="view1"></main>-->
+        <view1 layout="row"></view1>
         <!-- In production use:
             <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
         -->
@@ -35,6 +35,7 @@
         <script src="core/version/version.js"></script>
         <script src="core/version/version-directive.js"></script>
         <script src="core/version/interpolate-filter.js"></script>
+        <script src="assets/js/xml2json.min.js"></script>
     </body>
 
 </html>

@@ -11,15 +11,15 @@
     <md-content class="md-no-momentum _md">
         <md-input-container>
             <label>Skip Value</label>
-            <input type="number" ng-model="skip" min="1" max="100">
+            <input type="number" ng-model="vm.skip" min="1" max="100">
         </md-input-container>
 
         <md-input-container>
             <label>Limit Value</label>
-            <input type="number" ng-model="limit" min="1" max="12">
+            <input type="number" ng-model="vm.limit" min="1" max="12">
         </md-input-container>
 
-        <md-button class="md-raised md-accent" ng-click="lookupParams(skip, limit);">Send</md-button>
+        <md-button class="md-raised md-accent" ng-click="vm.lookupParams(vm.skip, vm.limit);">Send</md-button>
 
         <p>
             <strong>
@@ -33,13 +33,13 @@
 
 </section><!-- End .lookupParams-container -->
 
-<section class="addresses-container" layout="column flex">
-    <md-content ng-if="addresses" class="md-padding" layout="row flex">
+<section class="addresses-container">
+    <md-content ng-if="vm.addresses" class="md-padding" layout="row flex">
         <md-card
             class="flex-33"
             md-theme="{{ 'default' }}"
             md-theme-watch
-            ng-repeat="address in addresses">
+            ng-repeat="address in vm.addresses track by address.id">
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">{{address.primary_line}}</span>
@@ -47,14 +47,18 @@
                 </md-card-title-text>
                 <md-card-title-media>
                     <div class="md-media-md card-media">
-                        <img ng-src="{{imagePath}}" class="md-card-image" alt="Map">
+                        <img ng-src="{{vm.imagePath}}" class="md-card-image" alt="Map">
                     </div>
                 </md-card-title-media>
             </md-card-title>
+            <md-card-content ng-if="vm.clickedId === address.id">
+                <span>Bedrooms: {{vm.detail.bedrooms}}</span>
+                <span>Bathrooms: {{vm.detail.bathrooms}}</span>
+            </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
                 <md-button
                     class="md-raised md-accent"
-                    ng-click="details(address.primary_line, address.city, address.state);">
+                    ng-click="vm.details(address.primary_line, address.city, address.state, address.id);">
                     Details
                 </md-button>
             </md-card-actions>
